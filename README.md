@@ -1,98 +1,231 @@
+# Crux API
+
 <p align="center">
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
 </p>
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
-
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg" alt="Donate us"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow" alt="Follow us on Twitter"></a>
+<p align="center">
+  Uma API robusta para gerenciamento de desenvolvedores, construída com NestJS.
 </p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
-## Description
+<p align="center">
+  <a href="https://github.com/samuelcsantana/crux/actions/workflows/ci.yml"><img src="https://github.com/samuelcsantana/crux/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
+  <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License"></a>
+</p>
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+---
 
-## Project setup
+## 📖 Sobre o Projeto
+
+**Crux** é uma API RESTful poderosa e escalável, projetada para o gerenciamento de um cadastro de desenvolvedores. Ela fornece um conjunto completo de endpoints para operações de CRUD (Criar, Ler, Atualizar, Deletar). Construída com o moderno e eficiente framework [NestJS](https://nestjs.com/), serve como um excelente ponto de partida para aplicações mais complexas e como um portfólio técnico.
+
+Este projeto foi desenvolvido como uma demonstração de habilidades em desenvolvimento backend, aplicando as melhores práticas em design de APIs, validação de dados e estrutura de aplicação.
+
+### ✨ Tecnologias Utilizadas
+
+*   **[NestJS](https://nestjs.com/)**: Um framework Node.js progressivo para construir aplicações server-side eficientes e escaláveis.
+*   **[TypeScript](https://www.typescriptlang.org/)**: Superset de JavaScript que adiciona tipagem estática opcional.
+*   **[TypeORM](https://typeorm.io/)**: Um ORM que pode rodar em diversas plataformas e suporta TypeScript e JavaScript.
+*   **[SQLite](https://www.sqlite.org/index.html)**: Um banco de dados SQL embutido, leve e que não necessita de um servidor.
+*   **[Class Validator](https://github.com/typestack/class-validator)**: Biblioteca para validação de dados baseada em decorators.
+*   **[Jest](https://jestjs.io/)**: Framework de testes em JavaScript com foco em simplicidade.
+
+---
+
+## 🚀 Como Começar
+
+Siga as instruções abaixo para obter uma cópia do projeto e executá-la em sua máquina local para desenvolvimento e testes.
+
+### ✅ Pré-requisitos
+
+Certifique-se de que você tem os seguintes softwares instalados:
+
+*   [Node.js](https://nodejs.org/en/) (versão 18 ou superior)
+*   [npm](https://www.npmjs.com/) (geralmente vem com o Node.js)
+
+### 📦 Instalação
+
+1.  Clone o repositório para a sua máquina local:
+    ```sh
+    git clone https://github.com/samuelcsantana/crux.git
+    ```
+2.  Navegue até o diretório do projeto:
+    ```sh
+    cd crux
+    ```
+3.  Instale as dependências do projeto:
+    ```sh
+    npm install
+    ```
+
+---
+
+## 💻 Uso da Aplicação
+
+Após a instalação, você pode executar a aplicação em diferentes modos.
+
+### 🔥 Modo de Desenvolvimento
+
+Para executar a aplicação em modo de desenvolvimento com hot-reloading, use o comando abaixo. O servidor reiniciará automaticamente sempre que houver alterações no código.
 
 ```bash
-$ npm install
+npm run start:dev
 ```
+A API estará disponível em `http://localhost:3000`.
 
-## Compile and run the project
+### 🏭 Modo de Produção
+
+Para construir e executar a aplicação em modo de produção, utilize os seguintes comandos:
 
 ```bash
-# development
-$ npm run start
+# 1. Compila o projeto para JavaScript
+npm run build
 
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
+# 2. Inicia o servidor em modo de produção
+npm run start:prod
 ```
 
-## Run tests
+---
+
+## 🧪 Executando os Testes
+
+O projeto possui uma suíte de testes para garantir a qualidade e o funcionamento correto da API.
 
 ```bash
-# unit tests
-$ npm run test
+# Executa os testes unitários
+npm run test
 
-# e2e tests
-$ npm run test:e2e
+# Executa os testes end-to-end (E2E)
+npm run test:e2e
 
-# test coverage
-$ npm run test:cov
+# Gera um relatório de cobertura de testes
+npm run test:cov
 ```
 
-## Deployment
+---
 
-When you're ready to deploy your NestJS application to production, there are some key steps you can take to ensure it runs as efficiently as possible. Check out the [deployment documentation](https://docs.nestjs.com/deployment) for more information.
+## Endpoints da API
 
-If you are looking for a cloud-based platform to deploy your NestJS application, check out [Mau](https://mau.nestjs.com), our official platform for deploying NestJS applications on AWS. Mau makes deployment straightforward and fast, requiring just a few simple steps:
+A API fornece os seguintes endpoints para gerenciar os desenvolvedores:
 
-```bash
-$ npm install -g @nestjs/mau
-$ mau deploy
+### `POST /developers`
+
+Cria um novo desenvolvedor.
+
+**Corpo da Requisição (Body):**
+```json
+{
+  "name": "Ada Lovelace",
+  "email": "ada.lovelace@example.com",
+  "dateOfBirth": "1815-12-10"
+}
 ```
 
-With Mau, you can deploy your application in just a few clicks, allowing you to focus on building features rather than managing infrastructure.
+**Resposta de Sucesso (201 Created):**
+```json
+{
+  "id": "some-unique-id",
+  "name": "Ada Lovelace",
+  "email": "ada.lovelace@example.com",
+  "dateOfBirth": "1815-12-10"
+}
+```
 
-## Resources
+**Resposta de Erro (400 Bad Request):**
+```json
+{
+    "message": [
+        "email must be an email",
+        "dateOfBirth must be a valid ISO 8601 date string"
+    ],
+    "error": "Bad Request",
+    "statusCode": 400
+}
+```
 
-Check out a few resources that may come in handy when working with NestJS:
+### `GET /developers`
 
-- Visit the [NestJS Documentation](https://docs.nestjs.com) to learn more about the framework.
-- For questions and support, please visit our [Discord channel](https://discord.gg/G7Qnnhy).
-- To dive deeper and get more hands-on experience, check out our official video [courses](https://courses.nestjs.com/).
-- Deploy your application to AWS with the help of [NestJS Mau](https://mau.nestjs.com) in just a few clicks.
-- Visualize your application graph and interact with the NestJS application in real-time using [NestJS Devtools](https://devtools.nestjs.com).
-- Need help with your project (part-time to full-time)? Check out our official [enterprise support](https://enterprise.nestjs.com).
-- To stay in the loop and get updates, follow us on [X](https://x.com/nestframework) and [LinkedIn](https://linkedin.com/company/nestjs).
-- Looking for a job, or have a job to offer? Check out our official [Jobs board](https://jobs.nestjs.com).
+Retorna uma lista com todos os desenvolvedores cadastrados.
 
-## Support
+**Resposta de Sucesso (200 OK):**
+```json
+[
+  {
+    "id": "some-unique-id-1",
+    "name": "Ada Lovelace",
+    "email": "ada.lovelace@example.com",
+    "dateOfBirth": "1815-12-10"
+  },
+  {
+    "id": "some-unique-id-2",
+    "name": "Grace Hopper",
+    "email": "grace.hopper@example.com",
+    "dateOfBirth": "1906-12-09"
+  }
+]
+```
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+### `GET /developers/:id`
 
-## Stay in touch
+Busca um desenvolvedor específico pelo seu `id`.
 
-- Author - [Kamil Myśliwiec](https://twitter.com/kammysliwiec)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+**Resposta de Sucesso (200 OK):**
+```json
+{
+  "id": "some-unique-id",
+  "name": "Ada Lovelace",
+  "email": "ada.lovelace@example.com",
+  "dateOfBirth": "1815-12-10"
+}
+```
 
-## License
+**Resposta de Erro (404 Not Found):**
+```json
+{
+  "message": "Developer with ID some-invalid-id not found",
+  "error": "Not Found",
+  "statusCode": 404
+}
+```
 
-Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
+### `PATCH /developers/:id`
+
+Atualiza os dados de um desenvolvedor existente. Apenas os campos enviados serão atualizados.
+
+**Corpo da Requisição (Body):**
+```json
+{
+  "name": "Ada King, Countess of Lovelace"
+}
+```
+
+**Resposta de Sucesso (200 OK):**
+```json
+{
+  "id": "some-unique-id",
+  "name": "Ada King, Countess of Lovelace",
+  "email": "ada.lovelace@example.com",
+  "dateOfBirth": "1815-12-10"
+}
+```
+
+### `DELETE /developers/:id`
+
+Remove um desenvolvedor do banco de dados.
+
+**Resposta de Sucesso (204 No Content):**
+A resposta não contém corpo.
+
+**Resposta de Erro (404 Not Found):**
+```json
+{
+  "message": "Not Found",
+  "statusCode": 404
+}
+```
+
+---
+
+## 📜 Licença
+
+Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
