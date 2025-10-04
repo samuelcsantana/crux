@@ -1,0 +1,46 @@
+# Nome do seu workflow. Aparecerá na aba "Actions" do GitHub.
+name: CI - Build and Test
+
+# Define os gatilhos: quando esta automação deve rodar.
+on:
+  # Roda quando um push é feito para a branch 'main'.
+  push:
+    branches: [ "main" ]
+  # Roda quando um Pull Request é aberto (ou atualizado) para a branch 'main'.
+  pull_request:
+    branches: [ "main" ]
+
+# Define os "trabalhos" (jobs) que serão executados.
+jobs:
+  # Nome do nosso job. Pode ser qualquer nome.
+  build-and-test:
+    # O tipo de máquina virtual que será usada. 'ubuntu-latest' é a mais comum e gratuita.
+    runs-on: ubuntu-latest
+
+    # Os passos (steps) que o job executará em sequência.
+    steps:
+      # 1. Faz o "checkout" do seu código do repositório para dentro da máquina virtual.
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # 2. Configura o ambiente Node.js na máquina.
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          # Define a versão do Node.js. Use a mesma que você usa localmente.
+          node-version: '22.x'
+          # Habilita o cache do npm para acelerar instalações futuras.
+          cache: 'npm'
+
+      # 3. Instala as dependências. 'npm ci' é mais rápido e seguro para CI do que 'npm install'.
+      - name: Install dependencies
+        run: npm ci
+
+      # 4. Roda o script de build (comum em projetos TypeScript/NestJS).
+      # O '--if-present' evita erros caso o script não exista no package.json.
+      - name: Build project
+        run: npm run build --if-present
+
+      # 5. Roda os testes automatizados. Este é o passo mais importante da CI.
+      - name: Run tests
+        run: npm test
