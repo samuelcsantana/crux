@@ -28,14 +28,14 @@ export class DevelopersService {
 
   async update(id: string, dto: UpdateDeveloperDto) {
      const developer = await this.repository.findOneBy({ id });
-     if (!developer) return null;
+     if (!developer) return undefined;
      this.repository.merge(developer, dto);
      return this.repository.save(developer);
   }
 
   async remove(id: string) {
      const developer = await this.repository.findOneBy({ id });
-     if (!developer) return null;
+     if (!developer) return undefined;
      return this.repository.remove(developer);
   }
 }
